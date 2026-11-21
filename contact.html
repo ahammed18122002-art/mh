@@ -1,0 +1,1053 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Contact MD Ahammed and ECHO Cybersecurity & Digital Services.">
+  <title>Contact | MD Ahammed · ECHO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    (function(){
+      try {
+        const s = localStorage.getItem('theme');
+        const d = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', s || (d ? 'dark' : 'light'));
+      } catch(e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js" defer></script>
+  <style>
+    :root {
+      --bg: #101828;
+      --bg-glow: #1e3a66;
+      --topbar-bg: rgba(22, 33, 54, 0.9);
+      --surface: #18243b;
+      --surface-alt: #1e2d48;
+      --card-grad: linear-gradient(155deg, #1a2740, #141f35);
+      --card-border: #2c4163;
+      --line: #2f4569;
+      --subtle-border: rgba(255, 255, 255, 0.11);
+      --text: #f4f8ff;
+      --text-soft: #d1def0;
+      --muted: #9eb0cc;
+      --blue: #5ea2ff;
+      --cyan: #4be1f0;
+      --green: #34d399;
+      --chip-bg: rgba(75, 225, 240, 0.11);
+      --chip-border: rgba(94, 162, 255, 0.38);
+      --chip-text: #bfe0ff;
+      --btn-soft-bg: #20314f;
+      --btn-soft-border: #37517a;
+      --btn-soft-text: #e6f0ff;
+      --radius: 18px;
+      --shadow: 0 14px 38px rgba(6, 12, 26, 0.34);
+    }
+    [data-theme="light"] {
+      --bg: #f1f5f9;
+      --bg-glow: #dbeafe;
+      --topbar-bg: rgba(255, 255, 255, 0.92);
+      --surface: #ffffff;
+      --surface-alt: #f8fafc;
+      --card-grad: linear-gradient(155deg, #ffffff, #f8fafc);
+      --card-border: #cbd5e1;
+      --line: #cbd5e1;
+      --subtle-border: rgba(15, 23, 42, 0.08);
+      --text: #0f172a;
+      --text-soft: #334155;
+      --muted: #64748b;
+      --blue: #2563eb;
+      --cyan: #0891b2;
+      --green: #059669;
+      --chip-bg: #eff6ff;
+      --chip-border: #bfdbfe;
+      --chip-text: #1d4ed8;
+      --btn-soft-bg: #f1f5f9;
+      --btn-soft-border: #cbd5e1;
+      --btn-soft-text: #1e293b;
+      --shadow: 0 12px 34px rgba(15, 23, 42, 0.07);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: radial-gradient(ellipse at 20% -5%, var(--bg-glow) 0, transparent 42%), var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.62;
+      overflow-x: hidden;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+    .topbar {
+      min-height: 72px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 0 max(22px, calc((100% - 1220px)/2));
+      background: var(--topbar-bg);
+      border-bottom: 1px solid var(--subtle-border);
+      backdrop-filter: blur(16px);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font: 800 14px Manrope, sans-serif;
+      letter-spacing: 1.3px;
+      flex-shrink: 0;
+    }
+    .brand a { text-decoration: none; color: inherit; }
+    .brand-name b { color: var(--blue); }
+    .brand-sub {
+      display: block;
+      font: 600 9px 'DM Sans', sans-serif;
+      letter-spacing: 1.6px;
+      color: var(--cyan);
+      margin-top: -2px;
+    }
+    .brand-logo-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      object-fit: contain;
+      background: #0a1324;
+      border: 1px solid var(--line);
+      padding: 2px;
+      display: block;
+    }
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .desktop-nav a {
+      padding: 9px 13px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .desktop-nav a:hover { color: var(--text); background: var(--surface-alt); }
+    .desktop-nav a.active {
+      color: var(--blue);
+      background: var(--chip-bg);
+    }
+    .top-actions { display: flex; align-items: center; gap: 8px; }
+    .theme-btn, .menu-toggle-btn {
+      height: 39px;
+      padding: 0 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: var(--text);
+      font: 600 12px 'DM Sans', sans-serif;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .theme-btn:hover, .menu-toggle-btn:hover { border-color: var(--blue); color: var(--blue); }
+    .menu-toggle-btn { display: none; }
+    .mobile-drawer {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      padding: 12px 20px 16px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+    }
+    .mobile-drawer.open { display: flex; }
+    .mobile-drawer a {
+      padding: 10px 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text-soft);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .mobile-drawer a.active { background: var(--chip-bg); color: var(--blue); }
+
+    .container { max-width: 1220px; margin: 0 auto; padding: 34px 22px 48px; }
+    .eyebrow { margin: 0; color: var(--cyan); font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+    .page-hero {
+      padding: 36px;
+      border-radius: 22px;
+      background: var(--card-grad);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero h1 {
+      margin: 8px 0 12px;
+      font: 800 clamp(26px, 3.6vw, 40px) Manrope, sans-serif;
+      letter-spacing: -1px;
+      line-height: 1.18;
+    }
+    .page-hero p.lead {
+      margin: 0;
+      max-width: 760px;
+      color: var(--text-soft);
+      font-size: 15px;
+    }
+    .panel {
+      padding: 24px;
+      border-radius: var(--radius);
+      background: var(--card-grad);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow);
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 16px;
+      border-radius: 11px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      border: 0;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .button:hover { transform: translateY(-2px); filter: brightness(1.06); }
+    .button-primary { background: linear-gradient(120deg, #3b82f6, #22d3ee); color: #051120; }
+    .button-soft { background: var(--btn-soft-bg); border: 1px solid var(--btn-soft-border); color: var(--btn-soft-text); }
+    .footer {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 24px 22px 34px;
+      border-top: 1px solid var(--subtle-border);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    @media (max-width: 900px) {
+      .desktop-nav { display: none; }
+      .menu-toggle-btn { display: inline-flex; }
+    }
+    @media (max-width: 768px) {
+      .topbar {
+        min-height: 60px;
+        padding: 0 12px;
+        gap: 8px;
+      }
+      .brand {
+        font-size: 13px;
+        gap: 8px;
+      }
+      .brand-sub {
+        display: none;
+      }
+      .brand-logo-img {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+      }
+      .theme-btn, .menu-toggle-btn {
+        height: 36px;
+        padding: 0 10px;
+        border-radius: 10px;
+      }
+      /* Compact Facebook-style horizontal scrollable mobile nav bar */
+      .menu-toggle-btn {
+        display: none !important;
+      }
+      .mobile-drawer {
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        gap: 4px;
+        padding: 6px 10px;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        position: sticky;
+        top: 60px;
+        z-index: 45;
+      }
+      .mobile-drawer::-webkit-scrollbar {
+        display: none;
+      }
+      .mobile-drawer a {
+        padding: 8px 12px;
+        font-size: 12.5px;
+        flex-shrink: 0;
+      }
+      .container {
+        padding: 16px 12px 32px;
+      }
+      .page-hero {
+        padding: 20px 16px;
+        border-radius: 16px;
+        margin-bottom: 18px;
+      }
+      .page-hero h1 {
+        font-size: 22px;
+        margin: 6px 0 8px;
+      }
+      .page-hero p.lead {
+        font-size: 13.5px;
+      }
+      .panel {
+        padding: 16px;
+        border-radius: 15px;
+      }
+      .button {
+        min-height: 40px;
+        padding: 10px 14px;
+        font-size: 12.5px;
+      }
+      .footer {
+        padding: 18px 14px 28px;
+        flex-direction: column;
+        text-align: center;
+        gap: 6px;
+      }
+    }
+    @media (max-width: 380px) {
+      .topbar { padding: 0 10px; }
+      .brand { font-size: 12px; }
+      .brand-logo-img { width: 30px; height: 30px; }
+      .container { padding: 14px 10px 28px; }
+      .page-hero { padding: 16px 14px; }
+      .page-hero h1 { font-size: 20px; }
+    }
+    
+.contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 22px; }
+.contact-details { display: grid; gap: 14px; }
+.cd-row { display: flex; align-items: center; gap: 14px; padding: 12px; border-radius: 12px; background: var(--surface-alt); border: 1px solid var(--subtle-border); }
+.cd-row i { font-size: 18px; color: var(--cyan); width: 22px; text-align: center; }
+.cd-row b { display: block; font-size: 12px; color: var(--muted); }
+.cd-row span { font-size: 14px; font-weight: 600; }
+.social-cards { display: grid; gap: 9px; }
+.social-cards a {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 11px 14px; border-radius: 11px; background: var(--surface-alt);
+  border: 1px solid var(--subtle-border); color: var(--text); text-decoration: none; font-size: 13px; font-weight: 600;
+}
+.social-cards a:hover { border-color: var(--blue); color: var(--blue); }
+.c-form { display: grid; gap: 13px; }
+.c-field { display: grid; gap: 6px; }
+.c-field label { font-size: 12px; font-weight: 700; color: var(--text-soft); }
+.c-field input, .c-field textarea {
+  width: 100%; padding: 11px 13px; border-radius: 10px;
+  border: 1px solid var(--line); background: var(--surface-alt); color: var(--text); font: inherit;
+}
+.c-field textarea { min-height: 115px; resize: vertical; }
+@media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <a href="index.html"><img class="brand-logo-img" src="1.jpg" alt="ECHO Logo"></a>
+      <div>
+        <span><a href="admin.html" title="Admin Dashboard">MD</a> <a href="index.html" class="brand-name"><b>AHAMMED</b></a></span>
+        <span class="brand-sub">ECHO CYBERSECURITY</span>
+      </div>
+    </div>
+
+    <nav class="desktop-nav" aria-label="Main Navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="certificates.html">Certificates</a>
+      <a href="photos.html">Photos</a>
+      <a class="active" href="contact.html">Contact</a>
+      <a href="agency.html">Agency</a>
+    </nav>
+
+    <div class="top-actions">
+      <button id="themeToggle" class="theme-btn" type="button" aria-label="Toggle color theme">
+        <span id="themeIconWrap"><i class="fa-solid fa-moon"></i></span>
+        <span>Mode</span>
+      </button>
+      <button id="mobileMenuBtn" class="menu-toggle-btn" type="button" aria-label="Open navigation menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <nav id="mobileDrawer" class="mobile-drawer" aria-label="Mobile Navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="certificates.html">Certificates</a>
+    <a href="photos.html">Photos</a>
+    <a class="active" href="contact.html">Contact</a>
+    <a href="agency.html">Agency</a>
+  </nav>
+
+  <main class="container">
+    
+<section class="page-hero">
+  <p class="eyebrow">GET IN TOUCH</p>
+  <h1>Contact MD Ahammed & ECHO</h1>
+  <p class="lead" id="contactNote">Reach out via WhatsApp, Messenger, or Email to discuss security audits, website recovery, web development, or digital support.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;">
+    <a id="ctWaBtn" class="button button-primary" href="https://wa.me/8801XXXXXXXXX" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+    <a id="ctMsgBtn" class="button button-soft" href="https://m.me/your-profile" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-messenger"></i> Message on Messenger</a>
+    <a id="ctMailBtn" class="button button-soft" href="mailto:hello@example.com"><i class="fa-regular fa-envelope"></i> Send Email</a>
+  </div>
+</section>
+
+<div class="contact-grid">
+  <section class="panel">
+    <h2 style="margin:0 0 16px;font:700 20px Manrope;">Direct Contact Channels</h2>
+    <div class="contact-details">
+      <div class="cd-row"><i class="fa-regular fa-envelope"></i><div><b>Email</b><span id="dispEmail">hello@example.com</span></div></div>
+      <div class="cd-row"><i class="fa-solid fa-phone"></i><div><b>Phone / WhatsApp</b><span id="dispPhone">+880 1XXX-XXXXXX</span></div></div>
+      <div class="cd-row"><i class="fa-solid fa-location-dot"></i><div><b>Location</b><span id="dispLocation">Bangladesh</span></div></div>
+      <div class="cd-row"><i class="fa-regular fa-clock"></i><div><b>Response Time</b><span id="dispResponse">Typically responds within a few hours</span></div></div>
+    </div>
+
+    <hr style="border:0;border-top:1px solid var(--subtle-border);margin:20px 0;">
+    <h3 style="margin:0 0 12px;font:700 16px Manrope;">Official Profiles</h3>
+    <div id="contactSocialList" class="social-cards"></div>
+  </section>
+
+  <section class="panel">
+    <h2 style="margin:0 0 8px;font:700 20px Manrope;">Quick Inquiry Composer</h2>
+    <p style="margin:0 0 16px;font-size:13px;color:var(--muted);">Compose your message below to open a pre-filled email directly in your mail client.</p>
+    <form id="quickMailForm" class="c-form">
+      <div class="c-field">
+        <label for="inqName">Your Name *</label>
+        <input id="inqName" required placeholder="Enter your name">
+      </div>
+      <div class="c-field">
+        <label for="inqService">Service Needed</label>
+        <input id="inqService" placeholder="e.g. Website Security Audit, Web Design, Malware Removal">
+      </div>
+      <div class="c-field">
+        <label for="inqMsg">Project or Issue Details *</label>
+        <textarea id="inqMsg" required placeholder="Briefly describe your website or requirements..."></textarea>
+      </div>
+      <button type="submit" class="button button-primary"><i class="fa-solid fa-paper-plane"></i> Open Email Draft</button>
+    </form>
+  </section>
+</div>
+
+  </main>
+
+  <footer class="footer">
+    <span id="footerText">© 2026 MD Ahammed · ECHO Cybersecurity & Digital Services. All rights reserved.</span>
+    <span id="footerTagline">Securing digital infrastructure & crafting modern web experiences.</span>
+  </footer>
+
+  <script>
+    const MASTER_STORAGE_KEY = 'echo_md_ahmed_master_v1';
+    const FALLBACK_MASTER = {
+  "settings": {
+    "brandName": "MD Ahammed",
+    "agencyName": "ECHO Cybersecurity & Digital Services",
+    "agencyShort": "ECHO",
+    "logo": "1.jpg",
+    "profilePhoto": "2.jpg",
+    "coverPhoto": "3.jpg",
+    "footerText": "© 2026 MD Ahammed · ECHO Cybersecurity & Digital Services. All rights reserved.",
+    "footerTagline": "Securing digital infrastructure & crafting modern web experiences."
+  },
+  "profile": {
+    "name": "MD Ahammed",
+    "eyebrow": "CYBERSECURITY & DIGITAL SERVICES",
+    "coverHeadline": "Securing Digital Assets. Building Modern Web Solutions.",
+    "tagline": "Cybersecurity Specialist · Web Developer · Digital Solutions Strategist",
+    "location": "Bangladesh (Available Worldwide)",
+    "availability": "Available for Projects",
+    "shortIntro": "Welcome to my professional space. I specialize in web application security, vulnerability assessment, WordPress hardening, OSINT intelligence, and full-cycle digital solutions under ECHO Cybersecurity & Digital Services.",
+    "website": "yourwebsite.com",
+    "email": "hello@example.com",
+    "whatsapp": "https://wa.me/8801XXXXXXXXX",
+    "messenger": "https://m.me/your-profile"
+  },
+  "about": {
+    "headline": "Bridging Offensive Security Awareness with Resilient Digital Craftsmanship",
+    "summary": "I am MD Ahammed, founder of ECHO Cybersecurity & Digital Services. My work focuses on helping individuals, creators, and growing businesses protect their web presence, recover compromised assets, and launch clean, reliable digital platforms.",
+    "background": "With hands-on experience across web development, server environments, WordPress ecosystems, and security auditing, I approach every project with an attacker-informed defensive mindset. Whether auditing a web application for vulnerabilities, cleaning malware, or building a high-converting site from scratch, clarity and technical precision remain my top priorities.",
+    "goals": "My goal is to make practical cybersecurity hygiene, structured OSINT research, and dependable digital execution accessible to businesses and professionals without unnecessary complexity or empty promises.",
+    "highlights": [
+      {
+        "title": "Security-First Web Engineering",
+        "description": "Designing and developing responsive websites built with clean architecture, hardened configurations, and performance in mind."
+      },
+      {
+        "title": "Malware Remediation & Hardening",
+        "description": "Diagnosing compromised WordPress installations, removing malicious payloads, patching entry points, and implementing layered defenses."
+      },
+      {
+        "title": "OSINT & Digital Exposure Analysis",
+        "description": "Conducting structured open-source intelligence reviews to help clients understand and reduce their public attack surface."
+      },
+      {
+        "title": "End-to-End Digital Operations",
+        "description": "Providing dependable administrative, document conversion, media editing, and business advertising assistance."
+      }
+    ]
+  },
+  "skills": [
+    "Vulnerability Assessment (VAPT)",
+    "Website Security",
+    "WordPress Hardening",
+    "Malware Removal",
+    "OSINT Intelligence",
+    "Web Development",
+    "Security Auditing",
+    "Digital Strategy",
+    "Media & Design"
+  ],
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "+880 1XXX-XXXXXX (Update in Admin)",
+    "whatsapp": "https://wa.me/8801XXXXXXXXX",
+    "messenger": "https://m.me/your-profile",
+    "location": "Bangladesh · Remote Worldwide",
+    "responseTime": "Typically responds within a few hours",
+    "note": "Reach out via WhatsApp, Messenger, or Email to discuss security audits, website recovery, web development, or digital support."
+  },
+  "socialLinks": [
+    {
+      "id": "soc-1",
+      "platform": "GitHub",
+      "handle": "@your-username",
+      "url": "https://github.com/your-username",
+      "icon": "fa-brands fa-github"
+    },
+    {
+      "id": "soc-2",
+      "platform": "LinkedIn",
+      "handle": "MD Ahammed",
+      "url": "https://www.linkedin.com/in/your-profile",
+      "icon": "fa-brands fa-linkedin"
+    },
+    {
+      "id": "soc-3",
+      "platform": "Facebook",
+      "handle": "ECHO Cybersecurity & Digital Services",
+      "url": "https://facebook.com/your-profile",
+      "icon": "fa-brands fa-facebook"
+    }
+  ],
+  "posts": [
+    {
+      "id": "post-welcome-1",
+      "title": "Welcome to ECHO Cybersecurity & Digital Services",
+      "description": "Welcome to my official portfolio and digital services hub. Here I share technical updates, security insights, web development showcases, and service announcements. Click 'MD' in the top-left header anytime to open the Admin Panel and manage all site content via master.json.",
+      "date": "2026-11-20",
+      "image": "3.jpg",
+      "tags": [
+        "ECHO",
+        "Cybersecurity",
+        "Portfolio",
+        "Web Development"
+      ],
+      "codeUrl": "https://github.com/your-username",
+      "contactUrl": "contact.html"
+    },
+    {
+      "id": "post-vapt-2",
+      "title": "Web Application Security & WordPress Hardening Checklist",
+      "description": "A structured approach to securing modern web properties: principle of least privilege, strict input validation, HTTP security headers, file integrity monitoring, and proactive vulnerability assessments before deployment.",
+      "date": "2026-11-15",
+      "image": "",
+      "tags": [
+        "VAPT",
+        "WordPress Security",
+        "Security Auditing"
+      ],
+      "codeUrl": "",
+      "contactUrl": "services.html"
+    }
+  ],
+  "services": [
+    {
+      "id": "srv-1",
+      "category": "Cybersecurity",
+      "title": "Vulnerability Assessment and Penetration Testing (VAPT)",
+      "description": "Systematic identification and verification of security weaknesses across web applications and digital assets with actionable remediation guidance.",
+      "icon": "fa-solid fa-shield-halved",
+      "features": [
+        "OWASP Top 10 Testing",
+        "Detailed Risk Report",
+        "Remediation Roadmap"
+      ],
+      "featured": true,
+      "image": "3.jpg",
+      "details": "Includes passive and active reconnaissance, manual OWASP Top 10 verification, business logic testing, CVSS severity scoring, and a step-by-step developer remediation guide."
+    },
+    {
+      "id": "srv-2",
+      "category": "Cybersecurity",
+      "title": "Professional Website Security",
+      "description": "Comprehensive protection setup including firewall configuration, SSL/TLS enforcement, secure headers, and continuous hardening best practices.",
+      "icon": "fa-solid fa-lock",
+      "features": [
+        "WAF & DNS Protection",
+        "HTTP Security Headers",
+        "Access Control Audit"
+      ],
+      "featured": true,
+      "image": "1.jpg",
+      "details": "Covers Cloudflare/WAF rule tuning, HTTPS/HSTS enforcement, Content-Security-Policy & X-Frame-Options headers, and server hardening."
+    },
+    {
+      "id": "srv-3",
+      "category": "Cybersecurity",
+      "title": "WordPress Malware Removal",
+      "description": "Thorough inspection and cleanup of infected WordPress core files, themes, plugins, and databases to restore clean site operation.",
+      "icon": "fa-solid fa-bug-slash",
+      "features": [
+        "Backdoor & Shell Removal",
+        "Database Sanitization",
+        "Post-Cleanup Hardening"
+      ],
+      "featured": true,
+      "image": "3.jpg",
+      "details": "Full file-by-file core integrity verification, obfuscated PHP backdoor cleanup, database injection scrubbing, and post-recovery firewall setup."
+    },
+    {
+      "id": "srv-4",
+      "category": "Cybersecurity",
+      "title": "Recover Hacked Websites",
+      "description": "Incident response assistance to regain control of compromised websites, patch exploited entry points, and assist with blacklist review requests.",
+      "icon": "fa-solid fa-kit-medical",
+      "features": [
+        "Incident Triage",
+        "Entry-Point Patching",
+        "Safe Restoration"
+      ],
+      "featured": false,
+      "image": "1.jpg",
+      "details": "Rapid containment of defaced or blacklisted websites, credential rotation, vulnerability patching, and Google Safe Browsing reconsideration support."
+    },
+    {
+      "id": "srv-5",
+      "category": "Cybersecurity",
+      "title": "WordPress Security Hardening",
+      "description": "Locking down administrative endpoints, file permissions, login security, and plugin configurations to reduce attack surface.",
+      "icon": "fa-solid fa-server",
+      "features": [
+        "Login & 2FA Hardening",
+        "File Permission Lockdown",
+        "Security Policy Setup"
+      ],
+      "featured": false,
+      "image": "1.jpg",
+      "details": "Secures wp-config.php, disables XML-RPC/file editing, enforces strong 2FA authentication, and applies least-privilege directory permissions."
+    },
+    {
+      "id": "srv-6",
+      "category": "Cybersecurity",
+      "title": "OSINT and Digital Exposure Intelligence",
+      "description": "Ethical open-source intelligence assessment to discover publicly exposed metadata, leaked credentials, and digital footprint risks.",
+      "icon": "fa-solid fa-magnifying-glass-chart",
+      "features": [
+        "Public Footprint Mapping",
+        "Exposure Assessment",
+        "Privacy Recommendations"
+      ],
+      "featured": true,
+      "image": "3.jpg",
+      "details": "Maps exposed subdomains, public repositories, breach exposure indicators, and metadata leaks with actionable privacy mitigation steps."
+    },
+    {
+      "id": "srv-7",
+      "category": "Cybersecurity",
+      "title": "Security Auditing",
+      "description": "In-depth configuration and architecture review of websites, hosting panels, and digital workflows against security standards.",
+      "icon": "fa-solid fa-clipboard-check",
+      "features": [
+        "Configuration Review",
+        "Vulnerability Prioritization",
+        "Executive Summary"
+      ],
+      "featured": false,
+      "image": "1.jpg",
+      "details": "Holistic audit of DNS, SSL/TLS ciphers, hosting access controls, CMS plugins, and operational security posture."
+    },
+    {
+      "id": "srv-8",
+      "category": "Web and Digital Services",
+      "title": "Website Design and Development",
+      "description": "Modern, fast, mobile-first websites and portfolios engineered with clean HTML5, CSS3, JavaScript, or CMS platforms.",
+      "icon": "fa-solid fa-code",
+      "features": [
+        "Responsive UI/UX",
+        "SEO-Ready Structure",
+        "Performance Optimization"
+      ],
+      "featured": true,
+      "image": "3.jpg",
+      "details": "Custom responsive frontend and CMS builds engineered for fast Core Web Vitals, clean semantic HTML, dark/light theme support, and SEO readiness."
+    },
+    {
+      "id": "srv-9",
+      "category": "Web and Digital Services",
+      "title": "Web Hosting Assistance",
+      "description": "Guidance and technical setup for domain configuration, DNS records, SSL certificates, migrations, and hosting optimization.",
+      "icon": "fa-solid fa-cloud-arrow-up",
+      "features": [
+        "Domain & DNS Setup",
+        "Site Migration",
+        "SSL & Speed Tuning"
+      ],
+      "featured": false,
+      "image": "3.jpg",
+      "details": "End-to-end cPanel/VPS setup, domain & DNS routing (A, CNAME, MX, SPF/DKIM), zero-downtime migrations, and SSL activation."
+    },
+    {
+      "id": "srv-10",
+      "category": "Web and Digital Services",
+      "title": "Social Account Recovery Assistance",
+      "description": "Step-by-step technical guidance and official appeal preparation to help recover compromised or locked social media accounts.",
+      "icon": "fa-solid fa-user-shield",
+      "features": [
+        "Official Appeal Guidance",
+        "Security Checkup",
+        "2FA Recovery Setup"
+      ],
+      "featured": false,
+      "image": "1.jpg",
+      "details": "Structured recovery checklist, identity verification preparation, official platform appeal formatting, and post-recovery 2FA lockdown."
+    },
+    {
+      "id": "srv-11",
+      "category": "Web and Digital Services",
+      "title": "Meta Verification Assistance",
+      "description": "Eligibility review, profile readiness checklist, and documentation preparation support for Meta verification applications.",
+      "icon": "fa-solid fa-circle-check",
+      "features": [
+        "Profile Readiness Audit",
+        "Documentation Checklist",
+        "Application Guidance"
+      ],
+      "featured": false,
+      "image": "1.jpg",
+      "details": "Evaluates notability, profile completeness, two-factor security, and official documentation requirements prior to submission."
+    },
+    {
+      "id": "srv-12",
+      "category": "Web and Digital Services",
+      "title": "Business Advertising",
+      "description": "Structured digital ad campaign setup, audience targeting, and creative presentation to help businesses reach relevant customers.",
+      "icon": "fa-solid fa-bullhorn",
+      "features": [
+        "Campaign Setup",
+        "Audience Targeting",
+        "Creative Ad Copy"
+      ],
+      "featured": false,
+      "image": "3.jpg",
+      "details": "Sets up Meta and search ad funnels, audience segmentation, conversion tracking pixels, and high-clarity ad visuals."
+    },
+    {
+      "id": "srv-13",
+      "category": "General Digital Services",
+      "title": "Microsoft Word & Excel",
+      "description": "Professional document formatting, structured spreadsheets, formulas, reports, and clean business templates.",
+      "icon": "fa-solid fa-file-excel",
+      "features": [
+        "Formatted Reports",
+        "Dynamic Spreadsheets",
+        "Data Organization"
+      ],
+      "featured": false,
+      "image": "3.jpg",
+      "details": "Creates executive Word reports, automated Excel trackers with formulas/charts, and standardized business documentation."
+    },
+    {
+      "id": "srv-14",
+      "category": "General Digital Services",
+      "title": "Photo & Video Editing",
+      "description": "Clean visual retouching, background refinement, social media graphics, and engaging short-form or promotional video edits.",
+      "icon": "fa-solid fa-photo-film",
+      "features": [
+        "Color & Retouching",
+        "Social Media Cuts",
+        "Brand Consistency"
+      ],
+      "featured": false,
+      "image": "2.jpg",
+      "details": "Delivers portrait retouching, social media promotional graphics, clean color grading, and crisp short-form video cuts."
+    },
+    {
+      "id": "srv-15",
+      "category": "General Digital Services",
+      "title": "Logo & Advertisement Design",
+      "description": "Distinctive brand marks and high-clarity promotional banners crafted for digital platforms and print materials.",
+      "icon": "fa-solid fa-pen-nib",
+      "features": [
+        "Brand Identity Marks",
+        "Promotional Banners",
+        "High-Res Exports"
+      ],
+      "featured": true,
+      "image": "1.jpg",
+      "details": "Designs memorable brand emblems, social banners, and marketing creatives in high-resolution web and print formats."
+    },
+    {
+      "id": "srv-16",
+      "category": "General Digital Services",
+      "title": "PDF to Word & Excel Conversion",
+      "description": "Accurate conversion of static PDF files into clean, editable Word documents and structured Excel spreadsheets.",
+      "icon": "fa-solid fa-file-export",
+      "features": [
+        "Layout Preservation",
+        "Table Extraction",
+        "Manual Accuracy Check"
+      ],
+      "featured": false,
+      "image": "3.jpg",
+      "details": "Preserves tables, typography, and multi-column formatting when converting PDFs into editable DOCX and XLSX files."
+    },
+    {
+      "id": "srv-17",
+      "category": "General Digital Services",
+      "title": "Virtual Assistant, Research & Data Entry",
+      "description": "Reliable online research, structured data entry, email management, and day-to-day administrative support.",
+      "icon": "fa-solid fa-headset",
+      "features": [
+        "Online Research",
+        "Accurate Data Entry",
+        "Email & Admin Support"
+      ],
+      "featured": false,
+      "image": "3.jpg",
+      "details": "Provides structured web research, CRM/spreadsheet data entry, inbox triage, and ongoing operational support."
+    }
+  ],
+  "certificates": [
+    {
+      "id": "cert-1",
+      "title": "Cybersecurity & Ethical Hacking Foundations",
+      "issuer": "Professional Training & Lab Track",
+      "date": "2026-08-15",
+      "description": "Verified practical coursework covering network reconnaissance, web vulnerability assessment, and defensive hardening methodologies. (Replace with your certificate image and details in Admin Panel.)",
+      "image": "1.jpg",
+      "verifyUrl": ""
+    },
+    {
+      "id": "cert-2",
+      "title": "Web Application Security & OSINT Practices",
+      "issuer": "ECHO Security Study Track",
+      "date": "2026-10-10",
+      "description": "Focused training in open-source intelligence gathering, digital footprint analysis, and WordPress security hardening. (Editable via Admin Panel.)",
+      "image": "3.jpg",
+      "verifyUrl": ""
+    }
+  ],
+  "photos": [
+    {
+      "id": "photo-1",
+      "title": "ECHO Brand Identity",
+      "description": "Official emblem for ECHO Cybersecurity & Digital Services.",
+      "image": "1.jpg",
+      "date": "2026-11-20"
+    },
+    {
+      "id": "photo-2",
+      "title": "MD Ahammed — Portrait",
+      "description": "Founder & Cybersecurity Specialist at ECHO Cybersecurity & Digital Services.",
+      "image": "2.jpg",
+      "date": "2026-11-20"
+    },
+    {
+      "id": "photo-3",
+      "title": "ECHO Digital Workspace Banner",
+      "description": "Cybersecurity and modern web engineering visual banner.",
+      "image": "3.jpg",
+      "date": "2026-11-20"
+    }
+  ],
+  "agency": {
+    "name": "ECHO Cybersecurity & Digital Services",
+    "tagline": "Resilient Security. Modern Web Craftsmanship. Reliable Digital Execution.",
+    "intro": "ECHO Cybersecurity & Digital Services is a specialized independent digital practice led by MD Ahammed. We combine practical cybersecurity defense, web engineering, and everyday digital operations into one cohesive, dependable service experience.",
+    "mission": "To empower businesses, creators, and professionals with secure web platforms, transparent security assessments, and dependable digital support—delivered with integrity, precision, and clear communication.",
+    "whyChoose": [
+      {
+        "title": "Security-First Mindset",
+        "description": "Every website, audit, and digital workflow is approached with proactive risk awareness and clean technical standards."
+      },
+      {
+        "title": "Honest, Realistic Guidance",
+        "description": "No exaggerated claims or false guarantees—only transparent diagnostics, documented findings, and practical solutions."
+      },
+      {
+        "title": "Unified Technical & Creative Support",
+        "description": "From vulnerability assessments and malware cleanup to web development, design, and admin support under one roof."
+      },
+      {
+        "title": "Direct Communication",
+        "description": "Work directly with the practitioner handling your project for faster clarity, accountability, and tailored execution."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Discovery & Scope",
+        "description": "We review your current website, security concern, or digital project requirements to define clear objectives."
+      },
+      {
+        "step": "02",
+        "title": "Assessment & Architecture",
+        "description": "Conducting structured security analysis, technical planning, or creative layout preparation tailored to your goals."
+      },
+      {
+        "step": "03",
+        "title": "Execution & Hardening",
+        "description": "Implementing fixes, building responsive interfaces, or completing digital deliverables with rigorous quality checks."
+      },
+      {
+        "step": "04",
+        "title": "Delivery & Ongoing Guidance",
+        "description": "Providing clear documentation, post-delivery walkthroughs, and actionable recommendations for long-term resilience."
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Web Vulnerability & Hardening Audits",
+        "category": "Cybersecurity",
+        "description": "Structured security reviews identifying misconfigurations, outdated components, and exposure risks before attackers do."
+      },
+      {
+        "title": "Compromised WordPress Recovery",
+        "category": "Incident Response",
+        "description": "End-to-end malware removal, backdoor cleanup, and defensive hardening for business and personal WordPress sites."
+      },
+      {
+        "title": "Custom Portfolio & Agency Web Platforms",
+        "category": "Web Development",
+        "description": "Fast, responsive, JSON-powered websites designed for clarity, dark/light adaptability, and effortless maintenance."
+      }
+    ]
+  },
+  "serviceCategories": [
+    "Cybersecurity",
+    "Web and Digital Services",
+    "General Digital Services"
+  ]
+};
+    const $ = id => document.getElementById(id);
+    const safe = s => String(s ?? '').replace(/[&<>"']/g, c => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[c]));
+    function safeHref(url) {
+      const u = String(url ?? '').trim();
+      if (!u) return '#';
+      if (/^(https?:\/\/|mailto:|tel:|#|\.?\/?[a-zA-Z0-9_\-./]+\.html)/i.test(u)) return safe(u);
+      return '#';
+    }
+    async function getMaster() {
+      if (window.location.protocol !== 'file:') {
+        try {
+          const res = await fetch(`master.json?t=${Date.now()}`, { cache: 'no-store' });
+          if (res.ok) {
+            const data = await res.json();
+            try { localStorage.setItem(MASTER_STORAGE_KEY, JSON.stringify(data)); } catch(e) {}
+            return data;
+          }
+        } catch(e) {}
+      }
+      try {
+        const local = localStorage.getItem(MASTER_STORAGE_KEY);
+        if (local) return JSON.parse(local);
+      } catch(e) {}
+      return FALLBACK_MASTER;
+    }
+    function initCommonUI(master) {
+      const toggleBtn = $('themeToggle');
+      const iconWrap = $('themeIconWrap');
+      const media = window.matchMedia('(prefers-color-scheme: dark)');
+      function applyUI(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        if (iconWrap) iconWrap.innerHTML = theme === 'dark' ? '<i class="fa-solid fa-moon"></i>' : '<i class="fa-solid fa-sun"></i>';
+      }
+      let saved = null;
+      try { saved = localStorage.getItem('theme'); } catch(e) {}
+      applyUI(saved || (media.matches ? 'dark' : 'light'));
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+          const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          try { localStorage.setItem('theme', next); } catch(e) {}
+          applyUI(next);
+        });
+      }
+      media.addEventListener('change', e => {
+        let manual = null;
+        try { manual = localStorage.getItem('theme'); } catch(err) {}
+        if (!manual) applyUI(e.matches ? 'dark' : 'light');
+      });
+      const menuBtn = $('mobileMenuBtn');
+      const drawer = $('mobileDrawer');
+      if (menuBtn && drawer) {
+        menuBtn.addEventListener('click', () => drawer.classList.toggle('open'));
+      }
+      if (master?.settings) {
+        if ($('footerText')) $('footerText').textContent = master.settings.footerText || '';
+        if ($('footerTagline')) $('footerTagline').textContent = master.settings.footerTagline || '';
+      }
+    }
+    
+document.addEventListener('DOMContentLoaded', async () => {
+  const master = await getMaster();
+  initCommonUI(master);
+  const c = master.contact || {};
+  if ($('contactNote')) $('contactNote').textContent = c.note || '';
+  if ($('dispEmail')) $('dispEmail').textContent = c.email || '';
+  if ($('dispPhone')) $('dispPhone').textContent = c.phone || '';
+  if ($('dispLocation')) $('dispLocation').textContent = c.location || '';
+  if ($('dispResponse')) $('dispResponse').textContent = c.responseTime || '';
+
+  if ($('ctWaBtn')) $('ctWaBtn').href = safeHref(c.whatsapp);
+  if ($('ctMsgBtn')) $('ctMsgBtn').href = safeHref(c.messenger);
+  if ($('ctMailBtn')) $('ctMailBtn').href = safeHref(`mailto:${c.email || ''}`);
+
+  if ($('contactSocialList')) {
+    $('contactSocialList').innerHTML = (master.socialLinks || []).map(s => `
+      <a href="${safeHref(s.url)}" target="_blank" rel="noopener">
+        <span><i class="${safe(s.icon || 'fa-solid fa-link')}" style="color:var(--blue);margin-right:8px;"></i> ${safe(s.platform)} (${safe(s.handle)})</span>
+        <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:11px;color:var(--muted);"></i>
+      </a>
+    `).join('');
+  }
+
+  const form = $('quickMailForm');
+  if (form) {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = $('inqName').value.trim();
+      const srv = $('inqService').value.trim() || 'General Inquiry';
+      const msg = $('inqMsg').value.trim();
+      const to = c.email || 'hello@example.com';
+      const subject = encodeURIComponent(`[ECHO Inquiry] ${srv} — ${name}`);
+      const body = encodeURIComponent(`Name: ${name}
+Service: ${srv}
+
+Details:
+${msg}`);
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    });
+  }
+});
+
+  </script>
+</body>
+</html>

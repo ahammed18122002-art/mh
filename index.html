@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="MD Ahammed — ECHO Cybersecurity & Digital Services. Personal portfolio, security auditing, web development, and digital solutions.">
+  <title>MD Ahammed | ECHO Cybersecurity & Digital Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+  <script>
+    (function(){
+      try {
+        const s = localStorage.getItem('theme');
+        const d = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', s || (d ? 'dark' : 'light'));
+      } catch(e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js" defer></script>
+  <script src="home.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <a href="index.html" aria-label="ECHO Home"><img class="brand-logo-img" src="1.jpg" alt="ECHO Logo"></a>
+      <div>
+        <span><a href="admin.html" class="secret-admin" title="Admin Dashboard">MD</a> <a href="index.html" class="brand-name"><b>AHAMMED</b></a></span>
+        <span class="brand-sub">ECHO CYBERSECURITY</span>
+      </div>
+    </div>
+
+    <label class="search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input id="postSearch" type="search" placeholder="Search projects, security posts, tags..." aria-label="Search posts">
+    </label>
+
+    <div class="top-actions">
+      <button id="themeToggle" class="theme-btn" type="button" aria-label="Toggle color theme">
+        <span id="themeIconWrap"><i class="fa-solid fa-moon"></i></span>
+        <span class="theme-label">Mode</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="profile-card">
+      <div class="cover">
+        <div class="cover-badge"><i class="fa-solid fa-shield-halved"></i> ECHO CYBERSECURITY & DIGITAL SERVICES</div>
+        <div class="cover-caption">
+          <span class="eyebrow" id="heroEyebrow">CYBERSECURITY & DIGITAL SERVICES</span>
+          <span id="coverHeadline">Securing Digital Assets. Building Modern Web Solutions.</span>
+        </div>
+      </div>
+
+      <div class="profile-row">
+        <img class="avatar-img" src="2.jpg" alt="MD Ahammed">
+        <div class="identity">
+          <p class="eyebrow">FOUNDER · ECHO CYBERSECURITY & DIGITAL SERVICES</p>
+          <div class="identity-top">
+            <h1 id="profileName">MD Ahammed</h1>
+            <span class="verified-pill"><i class="fa-solid fa-shield-check"></i> Security & Web</span>
+          </div>
+          <p class="role-line" id="profileTagline">Cybersecurity Specialist · Web Developer · Digital Solutions Strategist</p>
+          <div class="skill-chips" id="skillChips"></div>
+        </div>
+        <div class="profile-contact">
+          <a id="btnWhatsapp" class="button button-primary" href="https://wa.me/8801XXXXXXXXX" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+          <a id="btnMessenger" class="button button-soft" href="https://m.me/your-profile" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-messenger"></i> Messenger</a>
+          <a id="btnEmail" class="button button-soft" href="mailto:hello@example.com"><i class="fa-regular fa-envelope"></i> Email</a>
+        </div>
+        <div class="mobile-profile-meta" id="mobileProfileMeta" aria-label="Mobile Profile Details">
+          <span class="mp-meta-item"><i class="fa-solid fa-shield-halved"></i> <span id="mobAgencyName">ECHO Cybersecurity & Digital Services</span></span>
+          <span class="mp-meta-item"><i class="fa-solid fa-location-dot"></i> <span id="mobLocation">Bangladesh (Available Worldwide)</span></span>
+          <span class="mp-meta-item mp-avail"><i class="fa-solid fa-circle"></i> <span id="mobAvailability">Available for Projects</span></span>
+        </div>
+        <div class="mobile-social-bar" id="mobileSocialLinks" aria-label="Mobile Social Profile Links"></div>
+      </div>
+
+    </section>
+
+    <nav class="main-nav sticky-main-nav" aria-label="Primary Navigation">
+      <a class="active" href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="certificates.html">Certificates</a>
+      <a href="photos.html">Photos</a>
+      <a href="contact.html">Contact</a>
+      <a href="agency.html">Agency</a>
+    </nav>
+
+    <div class="content-grid">
+      <!-- LEFT COLUMN (68–72%): Posts & Projects Feed -->
+      <section class="feed-column">
+        <!-- Posts & Projects Feed -->
+        <div class="feed-heading">
+          <div>
+            <p class="eyebrow">UPDATES, AUDITS & CASE SHOWCASE</p>
+            <h2>Posts & Projects</h2>
+          </div>
+          <span class="feed-count" id="postCount">Loading posts…</span>
+        </div>
+
+        <div id="postsContainer" class="posts-container" aria-live="polite">
+          <article class="panel empty-state">Loading portfolio posts…</article>
+        </div>
+        <div id="noResults" class="panel empty-state" hidden>No matching posts found. Try a different keyword.</div>
+      </section>
+
+      <!-- RIGHT COLUMN (28–32%): Sidebar / Links Area -->
+      <aside class="sidebar">
+        <!-- Intro & Expertise -->
+        <section class="panel intro-panel">
+          <div class="panel-heading">
+            <h2>Intro</h2>
+            <span class="live-dot" id="availabilityText">Available</span>
+          </div>
+          <p class="intro-copy" id="introCopy">Loading profile summary...</p>
+          <div class="info-list">
+            <div><i class="fa-solid fa-shield-halved"></i><span><b>Agency</b><small>ECHO Cybersecurity & Digital Services</small></span></div>
+            <div><i class="fa-solid fa-location-dot"></i><span><b>Location</b><small id="infoLocation">Bangladesh</small></span></div>
+            <div><i class="fa-solid fa-envelope"></i><span><b>Email</b><small id="infoEmail">hello@example.com</small></span></div>
+            <div><i class="fa-solid fa-globe"></i><span><b>Website</b><small id="infoWebsite">yourwebsite.com</small></span></div>
+          </div>
+          <a class="text-link" href="about.html">Full profile & background <i class="fa-solid fa-arrow-right"></i></a>
+        </section>
+
+        <!-- Quick Links -->
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Quick Links</h2>
+          </div>
+          <div class="social-links" style="margin-top:12px;">
+            <a href="about.html"><i class="fa-solid fa-user-tie"></i><span>About MD Ahammed</span></a>
+            <a href="services.html"><i class="fa-solid fa-shield-halved"></i><span>All Cybersecurity & Digital Services</span></a>
+            <a href="certificates.html"><i class="fa-solid fa-certificate"></i><span>Certificates & Credentials</span></a>
+            <a href="photos.html"><i class="fa-solid fa-images"></i><span>Visual Gallery</span></a>
+            <a href="agency.html"><i class="fa-solid fa-building-shield"></i><span>ECHO Agency Overview</span></a>
+            <a href="contact.html"><i class="fa-solid fa-paper-plane"></i><span>Contact & Inquiry</span></a>
+          </div>
+        </section>
+
+        <!-- Agency Card -->
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Agency</h2>
+            <a class="text-link" href="agency.html">Explore ECHO</a>
+          </div>
+          <div class="agency-box">
+            <div class="agency-box-head">
+              <img src="1.jpg" alt="ECHO Logo">
+              <div>
+                <b>ECHO Cybersecurity</b>
+                <span id="homeAgencyTagline">Security & Digital Services</span>
+              </div>
+            </div>
+            <p id="homeAgencyIntro">Independent cybersecurity defense, web engineering, and digital operations practice.</p>
+          </div>
+        </section>
+
+        <!-- Certificates Preview -->
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Certificates</h2>
+            <a class="text-link" href="certificates.html">View All</a>
+          </div>
+          <div class="cert-preview-list" id="homeCertsPreview"></div>
+        </section>
+
+        <!-- Photos Preview -->
+        <section class="panel photos-panel">
+          <div class="panel-heading">
+            <h2>Photos</h2>
+            <a class="text-link" href="photos.html">Gallery</a>
+          </div>
+          <div class="photo-preview-grid" id="homePhotosPreview"></div>
+        </section>
+
+        <!-- Social Links -->
+        <section class="panel social-panel">
+          <h2>Connect Online</h2>
+          <div class="social-links" id="homeSocialLinks"></div>
+        </section>
+      </aside>
+    </div>
+
+    <footer class="footer">
+      <span id="footerText">© 2026 MD Ahammed · ECHO Cybersecurity & Digital Services. All rights reserved.</span>
+      <span id="footerTagline">Securing digital infrastructure & crafting modern web experiences.</span>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Dashboard | MD Ahammed · ECHO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+  <script>
+    (function(){
+      try {
+        const s = localStorage.getItem('theme');
+        const d = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', s || (d ? 'dark' : 'light'));
+      } catch(e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js" defer></script>
+  <script src="home.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <a href="index.html"><img class="brand-logo-img" src="1.jpg" alt="ECHO Logo"></a>
+      <div>
+        <span><a href="admin.html" class="secret-admin">MD</a> <a href="index.html" class="brand-name"><b>AHAMMED</b></a></span>
+        <span class="brand-sub">ECHO CONTENT STUDIO</span>
+      </div>
+    </div>
+
+    <label class="search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input id="adminGlobalSearch" type="search" placeholder="Filter items in current list..." aria-label="Search admin items">
+    </label>
+
+    <div class="top-actions">
+      <button id="themeToggle" class="theme-btn" type="button" aria-label="Toggle color theme">
+        <span id="themeIconWrap"><i class="fa-solid fa-moon"></i></span>
+        <span class="theme-label">Mode</span>
+      </button>
+      <a class="button button-soft" href="index.html"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Site</a>
+    </div>
+  </header>
+
+  <div id="adminApp" class="admin-shell">
+    <!-- Left Navigation Sidebar -->
+    <aside class="panel admin-sidebar">
+      <div class="admin-brand-card">
+        <img src="2.jpg" alt="MD Ahammed">
+        <div>
+          <b>MD Ahammed</b>
+          <span>ECHO CMS · master.json</span>
+        </div>
+      </div>
+
+      <nav class="admin-nav" aria-label="Admin Modules">
+        <button type="button" class="active" data-module-btn="posts">
+          <span><i class="fa-solid fa-newspaper"></i> Posts & Feed</span>
+          <span class="nav-badge" id="badgePosts">0</span>
+        </button>
+        <button type="button" data-module-btn="services">
+          <span><i class="fa-solid fa-shield-halved"></i> Services</span>
+          <span class="nav-badge" id="badgeServices">0</span>
+        </button>
+        <button type="button" data-module-btn="certificates">
+          <span><i class="fa-solid fa-certificate"></i> Certificates</span>
+          <span class="nav-badge" id="badgeCerts">0</span>
+        </button>
+        <button type="button" data-module-btn="photos">
+          <span><i class="fa-solid fa-images"></i> Photos</span>
+          <span class="nav-badge" id="badgePhotos">0</span>
+        </button>
+        <button type="button" data-module-btn="agency">
+          <span><i class="fa-solid fa-building-shield"></i> Agency</span>
+          <span class="nav-badge" id="badgeAgency">0</span>
+        </button>
+        <button type="button" data-module-btn="profile">
+          <span><i class="fa-solid fa-user-tie"></i> Profile & About</span>
+        </button>
+        <button type="button" data-module-btn="contact">
+          <span><i class="fa-solid fa-address-book"></i> Contact & Social</span>
+          <span class="nav-badge" id="badgeSocial">0</span>
+        </button>
+      </nav>
+    </aside>
+
+    <!-- Main Dashboard Content -->
+    <main class="admin-main">
+      <div class="admin-hero">
+        <div>
+          <p class="eyebrow">CENTRAL JSON MANAGEMENT</p>
+          <h1>Website Content Dashboard</h1>
+        </div>
+        <div class="json-toolbar">
+          <input type="file" id="importMasterInput" accept=".json,application/json" hidden>
+          <button type="button" class="button button-soft" id="importMasterBtn"><i class="fa-solid fa-file-import"></i> Import master.json</button>
+          <button type="button" class="button button-primary" id="exportMasterBtn"><i class="fa-solid fa-file-export"></i> Export master.json</button>
+          <button type="button" class="button button-danger" id="resetMasterBtn" title="Reload original master.json"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+        </div>
+      </div>
+
+      <!-- GitHub Pages Workflow Instructions -->
+      <div class="workflow-banner">
+        <b>GitHub Pages Static Deployment Workflow:</b> Because GitHub Pages hosts static files, browser JavaScript cannot overwrite files on the server directly.
+        <div class="workflow-steps">
+          <span><b>1.</b> Click <b>Import master.json</b> to load your current data.</span>
+          <span><b>2.</b> Add, edit, or delete content across any module below (auto-saved in browser preview).</span>
+          <span><b>3.</b> Click <b>Export master.json</b> to download the complete updated file.</span>
+          <span><b>4.</b> Replace <code>master.json</code> in your GitHub repository to publish live.</span>
+        </div>
+      </div>
+
+      <!-- Overview Stats -->
+      <section class="stats-grid" aria-label="Content Statistics">
+        <div class="stat-card">
+          <div class="stat-label">Total Posts</div>
+          <div class="stat-val" id="statPosts">0</div>
+          <div class="stat-sub">Homepage Feed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Total Services</div>
+          <div class="stat-val" id="statServices">0</div>
+          <div class="stat-sub">3 Categories</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Certificates</div>
+          <div class="stat-val" id="statCerts">0</div>
+          <div class="stat-sub">Verified Gallery</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Photos</div>
+          <div class="stat-val" id="statPhotos">0</div>
+          <div class="stat-sub">1:1 Gallery</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Agency Items</div>
+          <div class="stat-val" id="statAgency">0</div>
+          <div class="stat-sub">ECHO Brand</div>
+        </div>
+      </section>
+
+      <!-- Live Status Bar -->
+      <div id="adminStatusBar" class="admin-status-bar" role="status">
+        <span id="adminStatusText">Ready.</span>
+        <span class="small">Changes preview immediately on all pages in this browser.</span>
+      </div>
+
+      <!-- MODULE 1: POSTS -->
+      <section id="mod-posts" class="panel module-section active">
+        <div class="panel-heading"><h2>Manage Homepage Posts & Projects</h2></div>
+        <form id="adminPostForm" class="admin-form">
+          <div class="form-grid-2">
+            <div class="field">
+              <label for="pTitle">Post Title *</label>
+              <input id="pTitle" required maxlength="150" placeholder="e.g. WordPress Security Hardening & Audit">
+            </div>
+            <div class="field">
+              <label for="pDate">Publish Date *</label>
+              <input id="pDate" type="date" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="pDesc">Description / Project Details *</label>
+            <textarea id="pDesc" required placeholder="Share project scope, technical insights, or service announcement..."></textarea>
+          </div>
+          <div class="form-grid-2">
+            <div class="field">
+              <label for="pTags">Tags (comma separated)</label>
+              <input id="pTags" placeholder="Cybersecurity, VAPT, Web Development">
+            </div>
+            <div class="field">
+              <label for="pImage">Image Filename or URL (optional)</label>
+              <input id="pImage" placeholder="e.g. 3.jpg or https://...">
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="field">
+              <label for="pCode">Code / Repository URL (optional)</label>
+              <input id="pCode" placeholder="https://github.com/...">
+            </div>
+            <div class="field">
+              <label for="pContact">Contact / Action Link (optional)</label>
+              <input id="pContact" placeholder="contact.html or https://...">
+            </div>
+          </div>
+          <div>
+            <button type="submit" class="button button-primary" id="pSubmitBtn">Add Post</button>
+          </div>
+        </form>
+        <div class="crud-list" id="adminPostList"></div>
+      </section>
+
+      <!-- MODULE 2: SERVICES -->
+      <section id="mod-services" class="panel module-section">
+        <div class="panel-heading"><h2>Manage Service Categories</h2></div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;max-width:520px;margin-top:12px;">
+          <input id="newServiceCatInput" style="flex:1;min-width:200px;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--input-bg);color:var(--text);" placeholder="New category name (e.g. Network Security)...">
+          <button type="button" class="button button-soft" id="addServiceCatBtn"><i class="fa-solid fa-folder-plus"></i> Add Category</button>
+        </div>
+        <div class="tag-pill-list" id="adminServiceCatList"></div>
+
+        <hr style="border:0;border-top:1px solid var(--subtle-border);margin:20px 0;">
+        <div class="panel-heading"><h2>Manage Services Catalog</h2></div>
+        <form id="adminServiceForm" class="admin-form">
+          <div class="form-grid-2">
+            <div class="field">
+              <label for="sCategory">Service Category *</label>
+              <select id="sCategory"></select>
+            </div>
+            <div class="field">
+              <label for="sTitle">Service Title *</label>
+              <input id="sTitle" required placeholder="e.g. Vulnerability Assessment and Penetration Testing (VAPT)">
+            </div>
+          </div>
+          <div class="field">
+            <label for="sDesc">Short Summary *</label>
+            <textarea id="sDesc" required placeholder="Clear, realistic summary of the service..."></textarea>
+          </div>
+          <div class="field">
+            <label for="sDetails">Detailed Scope / Deliverables (optional)</label>
+            <textarea id="sDetails" placeholder="Detailed methodology, deliverables, and technical coverage..."></textarea>
+          </div>
+          <div class="form-grid-2">
+            <div class="field">
+              <label for="sFeatures">Key Features (comma separated)</label>
+              <input id="sFeatures" placeholder="OWASP Testing, Risk Report, Remediation Guide">
+            </div>
+            <div class="field">
+              <label for="sImage">Service Card Image Filename or URL</label>
+              <input id="sImage" placeholder="e.g. 3.jpg or 1.jpg">
+            </div>
+          </div>
+          <div class="field">
+            <label for="sIcon">FontAwesome Icon Class</label>
+            <input id="sIcon" placeholder="fa-solid fa-shield-halved">
+          </div>
+          <label class="checkbox-row">
+            <input type="checkbox" id="sFeatured"> Feature this service on the Homepage
+          </label>
+          <div>
+            <button type="submit" class="button button-primary" id="sSubmitBtn">Add Service</button>
+          </div>
+        </form>
+        <div class="crud-list" id="adminServiceList"></div>
+      </section>
+
+      <!-- MODULE 3: CERTIFICATES -->
+      <section id="mod-certificates" class="panel module-section">
+        <div class="panel-heading"><h2>Manage Certificates Gallery</h2></div>
+        <form id="adminCertForm" class="admin-form">
+          <div class="form-grid-2">
+            <div class="field">
+              <label for="cTitle">Certificate Title *</label>
+              <input id="cTitle" required placeholder="e.g. Certified Ethical Hacker / Web Security">
+            </div>
+            <div class="field">
+              <label for="cIssuer">Issuing Organization *</label>
+              <input id="cIssuer" required placeholder="e.g. EC-Council / Cisco / Coursera">
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="field">
+              <label for="cDate">Issue Date *</label>
+              <input id="cDate" type="date" required>
+            </div>
+            <div class="field">
+              <label for="cImage">Certificate Image Filename or URL *</label>
+              <input id="cImage" required placeholder="e.g. cert1.jpg (placed directly in My File)">
+            </div>
+          </div>
+          <div class="field">
+            <label for="cVerify">Verification URL (optional)</label>
+            <input id="cVerify" placeholder="https://verify.example.com/id">
+          </div>
+          <div class="field">
+            <label for="cDesc">Description *</label>
+            <textarea id="cDesc" required placeholder="Skills validated or credential summary..."></textarea>
+          </div>
+          <div>
+            <button type="submit" class="button button-primary" id="cSubmitBtn">Add Certificate</button>
+          </div>
+        </form>
+        <div class="crud-list" id="adminCertList"></div>
+      </section>
+
+      <!-- MODULE 4: PHOTOS -->
+      <section id="mod-photos" class="panel module-section">
+        <div class="panel-heading"><h2>Manage Photo Gallery (1:1 Square)</h2></div>
+        <form id="adminPhotoForm" class="admin-form">
+          <div class="form-grid-2">
+            <div class="field">
+              <label for="phTitle">Photo Title *</label>
+              <input id="phTitle" required placeholder="e.g. Security Lab Setup">
+            </div>
+            <div class="field">
+              <label for="phImage">Image Filename or URL *</label>
+              <input id="phImage" required placeholder="e.g. 2.jpg or photo4.jpg">
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="field">
+              <label for="phDesc">Caption / Description</label>
+              <input id="phDesc" placeholder="Brief description of the photograph">
+            </div>
+            <div class="field">
+              <label for="phDate">Date</label>
+              <input id="phDate" type="date">
+            </div>
+          </div>
+          <div>
+            <button type="submit" class="button button-primary" id="phSubmitBtn">Add Photo</button>
+          </div>
+        </form>
+        <div class="crud-list" id="adminPhotoList"></div>
+      </section>
+
+      <!-- MODULE 5: AGENCY -->
+      <section id="mod-agency" class="panel module-section">
+        <div class="panel-heading"><h2>Manage ECHO Agency Information</h2></div>
+        <form id="adminAgencyCoreForm" class="admin-form">
+          <div class="form-grid-2">
+            <div class="field">
+              <label for="agName">Agency Name *</label>
+              <input id="agName" required>
+            </div>
+            <div class="field">
+              <label for="agTagline">Agency Tagline *</label>
+              <input id="agTagline" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="agIntro">Agency Introduction *</label>
+            <textarea id="agIntro" required></textarea>
+          </div>
+          <div class="field">
+            <label for="agMission">Agency Mission *</label>
+            <textarea id="agMission" required></textarea>
+          </div>
+          <div>
+            <button type="submit" class="button button-primary">Save Agency Overview</button>
+          </div>
+        </form>
+
+        <hr style="border:0;border-top:1px solid var(--subtle-border);margin:20px 0;">
+        <h3 style="margin:0;font:700 16px Manrope;">Add / Edit Agency Cards (Why Choose Us, Work Process, Project Highlights)</h3>
+        <form id="adminAgencyItemForm" class="admin-form">
+          <div class="form-grid-2">
+            <div class="field">
+              <label for="agItemKind">Section Type *</label>
+              <select id="agItemKind">
+                <option value="whyChoose">Why Choose ECHO</option>
+                <option value="process">Work Process Step</option>
+                <option value="highlights">Agency Project Highlight</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="agItemExtra">Step Number or Category Label</label>
+              <input id="agItemExtra" placeholder="e.g. 05 or Cybersecurity">
+            </div>
+          </div>
+          <div class="field">
+            <label for="agItemTitle">Title *</label>
+            <input id="agItemTitle" required placeholder="Card heading">
+          </div>
+          <div class="field">
+            <label for="agItemDesc">Description *</label>
+            <textarea id="agItemDesc" required placeholder="Detailed explanation"></textarea>
+          </div>
+          <div>
+            <button type="submit" class="button button-primary" id="agItemSubmitBtn">Save Agency Item</button>
+          </div>
+        </form>
+        <div class="crud-list" id="adminAgencyList"></div>
+      </section>
+
+      <!-- MODULE 6: PROFILE & ABOUT -->
+      <section id="mod-profile" class="panel module-section">
+        <div class="panel-heading"><h2>Manage Profile, About & Skills</h2></div>
+        <form id="adminProfileForm" class="admin-form">
+          <div class="form-grid-2">
+            <div class="field">
+              <label for="prName">Display Name *</label>
+              <input id="prName" required>
+            </div>
+            <div class="field">
+              <label for="prEyebrow">Hero Eyebrow Label</label>
+              <input id="prEyebrow">
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="field">
+              <label for="prCoverHeadline">Cover Banner Headline</label>
+              <input id="prCoverHeadline">
+            </div>
+            <div class="field">
+              <label for="prTagline">Professional Title / Tagline</label>
+              <input id="prTagline">
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="field">
+              <label for="prLocation">Location</label>
+              <input id="prLocation">
+            </div>
+            <div class="field">
+              <label for="prAvail">Availability Badge</label>
+              <input id="prAvail">
+            </div>
+          </div>
+          <div class="field">
+            <label for="prWebsite">Website Display Text</label>
+            <input id="prWebsite">
+          </div>
+          <div class="field">
+            <label for="prShortIntro">Homepage Sidebar Intro</label>
+            <textarea id="prShortIntro"></textarea>
+          </div>
+          <hr style="border:0;border-top:1px solid var(--subtle-border);margin:6px 0;">
+          <div class="field">
+            <label for="abHeadline">About Page Headline</label>
+            <input id="abHeadline">
+          </div>
+          <div class="field">
+            <label for="abSummary">About Summary</label>
+            <textarea id="abSummary"></textarea>
+          </div>
+          <div class="field">
+            <label for="abBackground">Technical Background</label>
+            <textarea id="abBackground"></textarea>
+          </div>
+          <div class="field">
+            <label for="abGoals">Professional Goals</label>
+            <textarea id="abGoals"></textarea>
+          </div>
+          <div>
+            <button type="submit" class="button button-primary">Save Profile & About</button>
+          </div>
+        </form>
+
+        <hr style="border:0;border-top:1px solid var(--subtle-border);margin:20px 0;">
+        <h3 style="margin:0 0 10px;font:700 16px Manrope;">Homepage Skill Badges</h3>
+        <div style="display:flex;gap:8px;max-width:460px;">
+          <input id="newSkillInput" style="flex:1;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--input-bg);color:var(--text);" placeholder="Add new skill badge...">
+          <button type="button" class="button button-soft" id="addSkillBtn">Add Skill</button>
+        </div>
+        <div class="tag-pill-list" id="adminSkillList"></div>
+      </section>
+
+      <!-- MODULE 7: CONTACT & SOCIAL -->
+      <section id="mod-contact" class="panel module-section">
+        <div class="panel-heading"><h2>Manage Contact Information & Social Links</h2></div>
+        <form id="adminContactForm" class="admin-form">
+          <div class="form-grid-2">
+            <div class="field">
+              <label for="ctEmail">Email Address *</label>
+              <input id="ctEmail" type="email" required>
+            </div>
+            <div class="field">
+              <label for="ctPhone">Phone / Display Number</label>
+              <input id="ctPhone">
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="field">
+              <label for="ctWhatsapp">WhatsApp URL (e.g. https://wa.me/...)</label>
+              <input id="ctWhatsapp">
+            </div>
+            <div class="field">
+              <label for="ctMessenger">Messenger URL (e.g. https://m.me/...)</label>
+              <input id="ctMessenger">
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="field">
+              <label for="ctLocation">Contact Location</label>
+              <input id="ctLocation">
+            </div>
+            <div class="field">
+              <label for="ctResponse">Response Time Note</label>
+              <input id="ctResponse">
+            </div>
+          </div>
+          <div class="field">
+            <label for="ctNote">Contact Page Guidance Note</label>
+            <textarea id="ctNote"></textarea>
+          </div>
+          <div>
+            <button type="submit" class="button button-primary">Save Contact Details</button>
+          </div>
+        </form>
+
+        <hr style="border:0;border-top:1px solid var(--subtle-border);margin:20px 0;">
+        <h3 style="margin:0;font:700 16px Manrope;">Manage Social Media Links</h3>
+        <form id="adminSocialForm" class="admin-form">
+          <div class="form-grid-2">
+            <div class="field">
+              <label for="socPlatform">Platform Name *</label>
+              <input id="socPlatform" required placeholder="e.g. GitHub, LinkedIn, X">
+            </div>
+            <div class="field">
+              <label for="socHandle">Username / Handle *</label>
+              <input id="socHandle" required placeholder="e.g. @mdahammed">
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="field">
+              <label for="socUrl">Profile URL *</label>
+              <input id="socUrl" required placeholder="https://github.com/...">
+            </div>
+            <div class="field">
+              <label for="socIcon">FontAwesome Icon Class</label>
+              <input id="socIcon" placeholder="fa-brands fa-github">
+            </div>
+          </div>
+          <div>
+            <button type="submit" class="button button-primary" id="socSubmitBtn">Add Social Link</button>
+          </div>
+        </form>
+        <div class="crud-list" id="adminSocialList"></div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
